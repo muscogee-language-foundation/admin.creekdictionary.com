@@ -1,0 +1,28 @@
+<h1>Show Entry</h1>
+
+<ul>
+
+  <li>
+    <strong>Creek word:</strong>
+    <%= @entry.creek_word %>
+  </li>
+
+  <li>
+    <strong>English word:</strong>
+    <%= @entry.english_word %>
+  </li>
+
+  <li>
+    <strong>English definition:</strong>
+    <%= @entry.english_definition %>
+  </li>
+
+  <li>
+    <strong>Tags:</strong>
+    <%= @entry.tags %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.entry_path(@conn, :edit, @entry) %></span>
+<span><%= link "Back", to: Routes.entry_path(@conn, :index) %></span>
