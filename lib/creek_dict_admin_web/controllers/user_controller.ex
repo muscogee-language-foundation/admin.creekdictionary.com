@@ -4,7 +4,7 @@ defmodule CreekDictAdminWeb.UserController do
   alias CreekDictAdmin.Accounts
   alias CreekDictAdmin.Accounts.User
 
-  # plug :check_auth when action in [:new, :create]
+  plug :check_auth when action in []
 
   defp check_auth(conn, _params) do
     if user_id = get_session(conn, :current_user_id) do
