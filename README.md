@@ -1,20 +1,16 @@
-# CreekDictAdmin
+# Creek Dictionary Admin
 
-To start your Phoenix server:
+## What is this thing all about?
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+This app is the web interface for the creek dictionary database. The goal is to work with engaged language learners to expand the content of the database. This service exposes an API that provides data to the frontend app [creekdictionary.com](https://creekdictionary.com).
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## What hip language and framework is this?
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+This project utilizes the [Phoenix web framework](http://www.phoenixframework.org/) based on the [Elixir language](https://elixir-lang.org/).
 
-## Learn more
+## Things you will want (but may not need)
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+- PostgresSQL ([Postgres.app](https://postgresapp.com/))
+- Postgres Client ([Postico](https://eggerapps.at/postico/))
+- Elixir Version Manager ([asdf](https://asdf-vm.com/#/))
+- Editor ([VSCode](https://code.visualstudio.com/))
