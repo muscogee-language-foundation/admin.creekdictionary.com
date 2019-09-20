@@ -12,7 +12,6 @@
       <section class="container">
         <nav role="navigation">
           <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
             <li>
               <%= if signed_in?(@conn) do %>
                 <%= link "Sign Out", to: Routes.session_path(@conn, :delete), method: :delete %>
