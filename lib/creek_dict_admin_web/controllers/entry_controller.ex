@@ -32,10 +32,10 @@ defmodule CreekDictAdminWeb.EntryController do
 
   def create(conn, %{"entry" => entry_params}) do
     case Entries.create_entry(entry_params) do
-      {:ok, entry} ->
+      {:ok, _entry} ->
         conn
         |> put_flash(:info, "Entry created successfully.")
-        |> redirect(to: Routes.entry_path(conn, :show, entry))
+        |> redirect(to: Routes.entry_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
