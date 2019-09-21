@@ -57,10 +57,10 @@ defmodule CreekDictAdminWeb.EntryController do
     entry = Entries.get_entry!(id)
 
     case Entries.update_entry(entry, entry_params) do
-      {:ok, entry} ->
+      {:ok, _entry} ->
         conn
         |> put_flash(:info, "Entry updated successfully.")
-        |> redirect(to: Routes.entry_path(conn, :show, entry))
+        |> redirect(to: Routes.entry_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", entry: entry, changeset: changeset)
