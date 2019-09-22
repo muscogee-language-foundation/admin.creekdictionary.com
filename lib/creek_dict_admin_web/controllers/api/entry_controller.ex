@@ -4,6 +4,8 @@ defmodule CreekDictAdminWeb.Api.EntryController do
   alias CreekDictAdmin.Entries.Entry
   alias CreekDictAdmin.Repo
 
+  plug CORSPlug, origin: ["https://creekdictionary.com", "http://locahost:3000"]
+
   def index(conn, %{"q" => query}) do
     data =
       Entry
