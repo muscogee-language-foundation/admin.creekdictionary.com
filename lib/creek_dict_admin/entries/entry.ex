@@ -17,19 +17,16 @@ defmodule CreekDictAdmin.Entries.Entry do
   def changeset(entry, attrs) do
     entry
     |> cast(attrs, [:creek_word, :english_word, :english_definition, :tags])
-    |> validate_required([:creek_word, :english_word, :english_definition, :tags])
+    |> validate_required([:creek_word, :english_word, :tags])
     |> unique_constraint(:creek_word)
   end
 
   def search_creek_and_english_words(entry, search_query) do
-    split =
-      search_query
-      |> String.downcase()
-      |> String.split()
-
     from(e in entry,
       select: e,
-      where: e.creek_word in ^split or e.english_word in ^split
+      where:
+        ilike(e.creek_word, ^"%#{String.replace(search_query, "%", "\\%")}%") or
+          ilike(e.english_word, ^"%#{String.replace(search_query, "%", "\\%")}%")
     )
   end
 end
